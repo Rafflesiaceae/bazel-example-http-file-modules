@@ -1,0 +1,24 @@
+module(name = "lib", version = "1.0.0")
+
+bazel_dep(name = "bazel_skylib", version = "1.7.0")
+
+http_file = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_file")
+
+http_file(
+    name = "lib_srv_linux",
+    urls = ["http://127.0.0.1:41474/lib-srv.linux"],
+    sha256 = "5815a081563a47cab6167e87813d7a182ad1301e3f6f889a63bf71e329b7f2e3",
+    executable = True,
+)
+http_file(
+    name = "lib_srv_darwin",
+    urls = ["http://127.0.0.1:41474/lib-srv.darwin"],
+    sha256 = "463b83885f456022066820feff898480a3ec5979225b3836f9dceb97bafd6cc1",
+    executable = True,
+)
+http_file(
+    name = "lib_srv_windows",
+    urls = ["http://127.0.0.1:41474/lib-srv.windows.exe"],
+    sha256 = "bc58533c434860e2c89d390b37e7a8c4b4e65ec997052aa70cc885de6efd6efc",
+    executable = True,
+)

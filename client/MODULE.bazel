@@ -1,0 +1,7 @@
+module(name = "client", version = "1.0.0")
+
+bazel_dep(name = "lib", version = "1.0.0")
+local_path_override(
+    module_name = "lib",
+    path = "../lib",
+)

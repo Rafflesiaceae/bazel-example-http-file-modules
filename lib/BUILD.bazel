@@ -1,0 +1,6 @@
+load(":index.bzl", "output_lib_srv_version")
+
+output_lib_srv_version(
+    name = "debug-write-version",
+    output = "version",
+)
